@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <form method="post" >
+    <h2>Feedback Form</h2>
+    <input type="text " placeholder="Your Name" id="name" required>
+    <input type="text" placeholder="Your Email" id="email" required>
+    <input type="text" placeholder="Phone.no" id="phonenum"required>
+    <textarea placeholder="Enter message" id="message" required></textarea>
+    <button id="Submitted">Submit →</button>
+    </form> 
+</div>
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+ <script>
+    var sumbitt= document.getElementById("submitted")
+    var Name= document.getElementById("name").value
+    var Email= document.getElementById("email").value
+    var Phonenum= document.getElementById("phonenum").value
+    var  Message= document.getElementById("message").value
+    var body= 'Name: '+name + '<br/> Email: '+Email +'<br/> Phone.No: '+Phonenum+ '<br/> Message' + Message;
+     Email.send({
+    Host : "smtp.gmail.com",
+    Username : "saravanansaro759823@gmail.com ",
+    Password : "hlgbsgdmipurwbad",
+    To : 'saravanansaro759823@gmail.com ',
+    From : Email,
+    Subject : "Feedback Form",
+    Body : body
+}).then(
+  message => alert(message)
+);
+    
+   
+
+   </script>
+</body>
+</html>
